@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+             mc:Ignorable="d" NavigationPage.HasNavigationBar="True" NavigationPage.BackButtonTitle="Back" NavigationPage.HasBackButton="True"
+             Title = "PANOBOOKING"
+             x:Class="PANOBOOKINGTAXI.Views.MainMenu">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Path Fill="#009fe1" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
+                <Grid RowSpacing="0" Grid.Row="1"  Margin="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Label  Grid.Row="0" x:Name="mainlabel" Text="{Binding Name}" FontSize="16" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label  Grid.Row="0" x:Name="mainlabel3" Text="Logout" FontSize="10" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Movetologout" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label  Grid.Row="1" x:Name="mainlabel2" Text="Welcome To PANOBOOKING Drivers APP" FontSize="16" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".5*"/>
+                        <RowDefinition Height=".5*"/>
+                    </Grid.RowDefinitions>
+                <Grid   RowSpacing="0" Grid.Row="0" Margin="10,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*" />
+                        </Grid.ColumnDefinitions>
+                        <swipeCardView:SwipeCardView  Grid.Column="0"  Margin="5" >
+                            <Frame CornerRadius="50" HasShadow="True" BackgroundColor="White" >
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                    <Image  Source="schedule.png"  VerticalOptions="Center"  HeightRequest="120"   WidthRequest="100"></Image>
+                                    <Label FontAttributes="Bold" FontSize="18" MaxLines="2"  Text="Upcoming Schedule" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Movetoschedule" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </swipeCardView:SwipeCardView>
+                        <swipeCardView:SwipeCardView Grid.Column="1"  Margin="5" >
+                            <Frame CornerRadius="50" HasShadow="True" BackgroundColor="White" >
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                    <Image  Source="bookings"  VerticalOptions="Center"  HeightRequest="120"   WidthRequest="100"/>
+                                    <Label FontAttributes="Bold" FontSize="18" MaxLines="2"  Text="Bookings" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Movetobooking" />
+                                </Frame.GestureRecognizers>
+
+                            </Frame>
+                        </swipeCardView:SwipeCardView>
+                    </Grid>
+                    <Grid RowSpacing="0" Grid.Row="1" Margin="10,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*" />
+                        </Grid.ColumnDefinitions>
+                        <swipeCardView:SwipeCardView Grid.Column="0"  Margin="5">
+                            <Frame CornerRadius="50" HasShadow="True" BackgroundColor="White" >
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                        <Image  Source="cars"  VerticalOptions="Center"  HeightRequest="120"   WidthRequest="100"/>
+                                        <Label FontAttributes="Bold" FontSize="18" MaxLines="2"  Text="Car Specifications" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Movetoupdatedetails" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </swipeCardView:SwipeCardView>
+
+
+
+                        <swipeCardView:SwipeCardView Grid.Column="1"  Margin="5" >
+                            <Frame CornerRadius="50" HasShadow="True" BackgroundColor="White"  >
+                                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout Orientation="Vertical" VerticalOptions="Center" >
+                                        <Image  Source="account"  VerticalOptions="Center"  HeightRequest="120"   WidthRequest="100"/>
+                                        <Label FontAttributes="Bold" FontSize="18" MaxLines="2"  Text="Account" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </Grid>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="Movetoaccount" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </swipeCardView:SwipeCardView>
+                               
+                           
+                       
+                    </Grid>
+                </Grid>
+            </Grid>  
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

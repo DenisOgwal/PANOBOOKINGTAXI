@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="PANOBOOKINGTAXI.Views.Bookings">
+   
+   <!-- <ContentPage.ToolbarItems>
+        <ToolbarItem  x:Name="toolbarlabel" Text="Bookings List"  Order="Primary"
+                 Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <local1:BookingsListViewItem></local1:BookingsListViewItem>
+    </ContentPage.BindingContext> -->
+    <ContentPage.Content>
+        <StackLayout>
+            <!--ItemsSource="{Binding Products}"-->
+            <SearchBar Placeholder="Serarch.."  x:Name="searchbooking"/>
+            <ListView  x:Name="bookingslist"  SeparatorVisibility="Default" VerticalScrollBarVisibility="Default"  VerticalOptions="FillAndExpand" HasUnevenRows="True"  IsPullToRefreshEnabled="true" ItemTapped="bookingitem_IsTabbed">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                               <Grid Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".7*"/>
+                                        <ColumnDefinition Width=".3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="OrderCode" Grid.Row="0" Text="{Binding OrderCode}" TextColor="DeepSkyBlue" HorizontalOptions="Start"  Grid.Column="0" Margin="20,0,0,0" FontSize="15"/>
+                                    <Label x:Name="Cost"  Grid.Row="0" Text="{Binding Cost}" HorizontalOptions="End"  Grid.Column="1" Margin="0,0,20,0" FontSize="15"/>
+                                    <Label x:Name="Date" Grid.Row="1"  Grid.Column="0"   Margin="20,0,0,0"  Text="{Binding  Date}" HorizontalOptions="Start"   FontSize="10"/>
+                                    <Image x:Name="minusimage" Source="minus.png" IsVisible="false"  Grid.Row="1" WidthRequest="15" HeightRequest="15"  Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0">
+
+                                    </Image>
+                                    <Image x:Name="plusimage" Source="plus.jpg" IsVisible="true" Grid.Row="1" WidthRequest="15" HeightRequest="15"  Grid.Column="1" HorizontalOptions="End"   Margin="0,0,20,0">
+
+                                    </Image>
+
+                                    </Grid>
+                                    <!-- <ListView x:Name="descriptionview"  HasUnevenRows="True" HeightRequest="50" Margin="20" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell >
+                                                <StackLayout Padding="0">
+                                                    <Grid Padding="0" Margin="20">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width=".3*"/>
+                                                            <ColumnDefinition Width=".7*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Label  Grid.Row="0" Text="Destination:" TextColor="DeepSkyBlue" HorizontalOptions="Start"  Grid.Column="0" Margin="20,0,0,0" FontSize="15"/>
+                                                        <Label x:Name="Facility"  Grid.Row="0" Text="{Binding Facility}" HorizontalOptions="End"  Grid.Column="1" Margin="0,0,20,0" FontSize="15"/>
+
+                                                    </Grid>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>-->
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

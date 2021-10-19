@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PANOBOOKINGTAXI.Views.Account">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="400" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                    <Grid  BackgroundColor="#3399FF" Grid.Row="0" Padding="0,20,0,20" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" x:Name="username" Text="{Binding Name}" TextColor="White" HorizontalOptions="Center" FontSize="Title"/>
+                    <Label Grid.Row="1" Text="Your Account Details" TextColor="White" HorizontalOptions="Center" FontSize="Subtitle"/>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".5*"/>
+                            <ColumnDefinition Width=".5*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="From:" TextColor="White" HorizontalOptions="Start" FontSize="Subtitle" Padding="20,10,10,0"/>
+                        <DatePicker  Format="dd/MM/yyyy"  Grid.Column="0"  TextColor="White" HorizontalOptions="End" FontSize="Subtitle" Margin="10,0,10,0"/>
+                       
+                        <Label Grid.Column="1" Text="To:" TextColor="White" HorizontalOptions="Start" FontSize="Subtitle"  Padding="10,10,20,0"/>
+                        <DatePicker  Format="dd/MM/yyyy"  Grid.Column="1"  TextColor="White" HorizontalOptions="EndAndExpand" FontSize="Subtitle" Margin="10,0,10,0"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                        <CollectionView  x:Name="accountcollection" EmptyView="No items to display" ItemsSource="{Binding items}">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical" />
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <Grid Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width=".7*"/>
+                                                    <ColumnDefinition Width=".3*" />
+                                                </Grid.ColumnDefinitions>
+                                                <Label x:Name="OrderCode" Grid.Row="0" Text="{Binding OrderCode}" TextColor="DeepSkyBlue" HorizontalOptions="Start"  Grid.Column="0" Margin="20,0,0,0" FontSize="15"/>
+                                                <Label x:Name="Cost"  Grid.Row="0" Text="{Binding Cost}" HorizontalOptions="End"  Grid.Column="1" Margin="0,0,20,0" FontSize="15"/>
+                                                <Label x:Name="Date" Grid.Row="1"  Grid.Column="0"   Margin="20,0,0,0"  Text="{Binding  Date}" HorizontalOptions="Start"   FontSize="10"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </ViewCell>
+
+                                </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+                    <Grid Grid.Row="2" BackgroundColor="#3399FF">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".5*"/>
+                        <ColumnDefinition Width=".5*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Grid.Row="0" Text="Select View Category:" TextColor="White" HorizontalOptions="Start" FontSize="Subtitle" Padding="10,20,5,0"/>
+                    <Picker  Grid.Column="1"   Grid.Row="0" x:Name="picker" Title="Please Select Category"  FontSize="16" TitleColor="Black" HorizontalOptions="Start" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>General</x:String>
+                                <x:String>Cleared</x:String>
+                                <x:String>Pending</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Grid.Column="0"  Grid.Row="1" Text="Total Cleared:" TextColor="White" HorizontalOptions="Start" FontSize="Subtitle" Padding="20,10,10,0"/>
+                    <Label Grid.Column="0"   Grid.Row="1" Text="$0" TextColor="White" HorizontalOptions="End" FontSize="Subtitle" FontAttributes="Bold" Padding="0,10,5,0"/>
+
+                    <Label Grid.Column="1"  Grid.Row="1" Text="Pending:" TextColor="white" HorizontalOptions="Start" FontSize="Subtitle" Padding="20,10,10,0"/>
+                    <Label Grid.Column="1"  Grid.Row="1" Text="$0" TextColor="White" HorizontalOptions="End" FontSize="Subtitle" FontAttributes="Bold" Padding="0,10,10,0"/>
+
+                   
+                </Grid>
+            </Grid>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

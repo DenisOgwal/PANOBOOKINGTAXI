@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+	<item>
+	<color android:color="@color/splash_background"></color>
+	</item>
+	<item>
+		<bitmap
+			android:src="@drawable/icon"
+			android:tileMode="disabled"
+			android:gravity="center"/>
+	</item>
+</layer-list><!--
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+	<gradient
+        android:type="linear"
+        android:angle="317"
+        android:startColor="@color/colorGradientStart"
+        android:centerColor="@color/colorGradientCenter"
+        android:endColor="@color/colorGradientEnd"/>
+</shape>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+	<Grid>
+		<BoxView x:Name="bggradient">
+<BoxView.Background>
+	<LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
+<GradientStop Color="" offset=""></GradientStop>
+</LinearGradientBrush>
+</BoxView.Background>
+</BoxView>
+	</Grid>
+
+</ContentPage>-->

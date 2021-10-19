@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PANOBOOKINGTAXI.Views.UpdateDetails"
+              BackgroundImage="background.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="150"/>
+                </Grid.RowDefinitions>
+                <Grid RowSpacing="20" Grid.Row="1" Margin="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="Update Details" FontSize="30" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                    <Entry Grid.Row="1" x:Name="fullnames" Placeholder="Full Names" PlaceholderColor="#bababa" FontSize="16"/>
+                    <Entry Grid.Row="2" x:Name="email" Placeholder="Email" PlaceholderColor="#bababa" FontSize="16"></Entry>
+                    <Entry Grid.Row="3" x:Name="phonenumber" Placeholder="Phone Number" PlaceholderColor="#bababa" FontSize="16"/>
+                    <Label Grid.Row="4" Text="DOB:" FontSize="16" />
+                    <DatePicker x:Name="dob"  Grid.Row="5" FontSize="16" Format="dd/MM/yyyy"/>
+                    <Entry Grid.Row="6" x:Name="carspecifications" Placeholder="Car Specifications" PlaceholderColor="#bababa" FontSize="16"/>
+                    <Entry Grid.Row="7" x:Name="parkinglocation" Placeholder="Parking Location" PlaceholderColor="#bababa" FontSize="16"/>
+                    <Entry Grid.Row="8" x:Name="description" Placeholder="Descriptions" PlaceholderColor="#bababa" FontSize="16"/>
+                   
+                    <Button Text="Update Details" BackgroundColor="#FF0000" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="9" x:Name="registerbutton" Clicked="Updatebutton_Clicked"></Button>
+
+                    <Grid Grid.Row="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label BackgroundColor="#bababa" Grid.Column="0" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label TextColor="#bababa" Grid.Column="1" Text="Change Password" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </Grid>
+
+                    <Entry Grid.Row="11" x:Name="oldpassword" Placeholder="Old Password" PlaceholderColor="#bababa" FontSize="16" IsPassword="True"/>
+                    <Entry Grid.Row="12" x:Name="newpassword" Placeholder=" New Password" PlaceholderColor="#bababa" FontSize="16" IsPassword="True"/>
+                    <Entry Grid.Row="13" x:Name="confirmnewpassword" Placeholder=" Confirm New Password" PlaceholderColor="#bababa" FontSize="16" IsPassword="True"/>
+                    <Button Text="Change Password" BackgroundColor="#FF0000" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="14" x:Name="changepasswordbutton" Clicked="Updatepasswordbutton_Clicked"></Button>
+                    <Grid Grid.Row="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label BackgroundColor="#bababa"  Grid.Column="0" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label TextColor="#bababa"  Grid.Column="1" Text="Upload Car Images" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </Grid>
+                    <Image  Grid.Row="16"  x:Name="viewmyimage"  BackgroundColor="#BFD8DA" Margin="50,0,50,0" HeightRequest="{OnPlatform iOS=300, Android=250}"
+                    WidthRequest="{OnPlatform iOS=300, Android=250}"
+                    HorizontalOptions="Center"/> 
+                    <Button Text="Add Photo" BackgroundColor="#1A65EE" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="17" x:Name="Choosefromgallerybutton" Clicked="Choosefromgallerybutton_Clicked"></Button>
+                    <Button Text="Upload Photo" BackgroundColor="#FF0000" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="18" x:Name="Takephotobutton" Clicked="Takephotobutton_Clicked"></Button>
+                </Grid>
+               
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

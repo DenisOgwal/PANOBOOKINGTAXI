@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="PANOBOOKINGTAXI.MainPage">
+    <!--BackgroundImage="background.png">-->
+    <!-- mc:Ignorable="d" NavigationPage.HasNavigationBar="True" NavigationPage.BackButtonTitle="Back" NavigationPage.HasBackButton="True"
+             Title = "PANOBOOKING"-->
+
+    <ContentPage.Content >
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                <Path Fill="#009fe1" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
+                <Grid RowSpacing="20" Grid.Row="1" Margin="20,0,20,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                    </Grid.RowDefinitions>
+
+                    <controls:CircleImage Source="icon.png" Aspect="AspectFit" FillColor="#009fe1">
+                        <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">20</On>
+                                <On Platform="WinPhone">25</On>
+                            </OnPlatform>
+                        </controls:CircleImage.WidthRequest>
+                        <controls:CircleImage.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">20</On>
+                                <On Platform="WinPhone">25</On>
+                            </OnPlatform>
+                        </controls:CircleImage.HeightRequest>
+                    </controls:CircleImage>
+
+                    <Entry Grid.Row="1" x:Name="taxino" Placeholder="Taxi Registration No." PlaceholderColor="#bababa" FontSize="16"/>
+                    <Entry Grid.Row="2"  x:Name="password" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16" IsPassword="True">
+                       <!-- <Entry.Effects>
+                            <ef:ShowHidePassEffect />
+                        </Entry.Effects>-->
+                    </Entry>
+                    <Button Text="LogIn" BackgroundColor="#FF0000" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3" x:Name="loginbutton" Clicked="loginbutton_Clicked"></Button>
+                    <Label Text="Login Trouble ? GetHelp" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    </Grid>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="6">
+                        <Label Text="Login With Google" TextColor="#485992"  />
+                    </StackLayout>
+                </Grid>
+                <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
+                    <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
+                    <Label x:Name="Movestoregister"  Text="Dont'Have Account Login? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" >
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Movetoregister" />
+                        </Label.GestureRecognizers>
+                        </Label>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

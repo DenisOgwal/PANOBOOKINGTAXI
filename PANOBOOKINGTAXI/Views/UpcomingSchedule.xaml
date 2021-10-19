@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PANOBOOKINGTAXI.Views.UpcomingSchedule" Title="Schedule List">
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar Placeholder="Serarch.."  x:Name="searchschedule"/>
+            <ListView  x:Name="schedulelist"  SeparatorVisibility="Default" VerticalScrollBarVisibility="Default"  VerticalOptions="FillAndExpand" HasUnevenRows="True"  IsPullToRefreshEnabled="true" ItemTapped="scheduleitem_IsTapped">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width=".7*"/>
+                                        <ColumnDefinition Width=".3*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="OrderCode" Grid.Row="0" Text="{Binding OrderCode}" TextColor="DeepSkyBlue" HorizontalOptions="Start"  Grid.Column="0" Margin="20,0,0,0" FontSize="15"/>
+                                    <Label x:Name="Cost"  Grid.Row="0" Text="{Binding Cost}" HorizontalOptions="End"  Grid.Column="1" Margin="0,0,20,0" FontSize="15"/>
+                                    <Label x:Name="Date" Grid.Row="1"  Grid.Column="0"   Margin="20,0,0,0"  Text="{Binding  Date}" HorizontalOptions="Start"   FontSize="10"/>
+                                    <Image x:Name="minusimage" Source="minus.png" IsVisible="false"  Grid.Row="1" WidthRequest="15" HeightRequest="15"  Grid.Column="1" HorizontalOptions="End" Margin="0,0,20,0">
+
+                                    </Image>
+                                    <Image x:Name="plusimage" Source="plus.jpg" IsVisible="true" Grid.Row="1" WidthRequest="15" HeightRequest="15"  Grid.Column="1" HorizontalOptions="End"   Margin="0,0,20,0">
+
+                                    </Image>
+
+                                </Grid>
+
+                            </StackLayout>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
