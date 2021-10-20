@@ -65,8 +65,11 @@ namespace PANOBOOKINGTAXI.Views
                         description.Text = responses.Repayments.ToString();
                         CarType= responses.CarType.ToString();
                         countimages = Convert.ToInt32(responses.PhotoUri);
-                        DateTime det2 = DateTime.ParseExact(responses.DOB.ToString().Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                        dob.Date = det2;
+                        if (responses.DOB.ToString() !="")
+                        {
+                            DateTime det2 = DateTime.ParseExact(responses.DOB.ToString().Trim(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                            dob.Date = det2;
+                        }
                     }
                     else
                     {

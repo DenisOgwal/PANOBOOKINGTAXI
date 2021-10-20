@@ -3,10 +3,7 @@ using PANOBOOKINGTAXI.Models;
 using Passingwind.UserDialogs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,18 +18,19 @@ namespace PANOBOOKINGTAXI.Views
         public Account()
         {
             InitializeComponent();
-            try { 
-            var myValue = Preferences.Get("drivername", "drivername");
-            Names = "Hello Mr. " + myValue;
-            BindingContext = this;
-            username.Text = Names;
-            populatelist();
+            try
+            {
+                var myValue = Preferences.Get("drivername", "drivername");
+                Names = "Hello Mr. " + myValue;
+                BindingContext = this;
+                username.Text = Names;
+                populatelist();
             }
             catch (Exception ex)
             {
-               
-               DisplayAlert("Error", ex.Message, "Cancel");
-               return;
+
+                DisplayAlert("Error", ex.Message, "Cancel");
+                return;
             }
         }
         private async void populatelist()
@@ -67,11 +65,20 @@ namespace PANOBOOKINGTAXI.Views
                     items = new List<BookingsListViewItem>();
                     foreach (var objs in obj.error)
                     {
-                        items.Add(new BookingsListViewItem { OrderCode = objs.OrderCode.Trim(), Cost = "$" + objs.Cost, Date = objs.Date, Facility = objs.Facility, Quantity = objs.Quantity, User = objs.User, DatesFrom = objs.DatesFrom, DatesTo = objs.DatesTo, Taken = objs.Taken });
+                        if (objs.OrderCode.Trim() == "No Booking Found for this Vehicle so Far")
+                        {
+                            dialog.Hide();
+                            await DisplayAlert("Information", "No Booking Found for this Vehicle so Far", "OK");
+                            await Navigation.PopModalAsync();
+                            return;
+                        }
+                        else
+                        {
+                            items.Add(new BookingsListViewItem { OrderCode = objs.OrderCode.Trim(), Cost = "$" + objs.Cost, Date = objs.Date, Facility = objs.Facility, Quantity = objs.Quantity, User = objs.User, DatesFrom = objs.DatesFrom, DatesTo = objs.DatesTo, Taken = objs.Taken });
+                        }
                     }
                     dialog.Hide();
-                    ///accountcollection.ItemsSource = items;
-                    //BindingContext = this;
+
                 }
                 else
                 {
@@ -87,5 +94,6 @@ namespace PANOBOOKINGTAXI.Views
             }
 
         }
+
     }
 }

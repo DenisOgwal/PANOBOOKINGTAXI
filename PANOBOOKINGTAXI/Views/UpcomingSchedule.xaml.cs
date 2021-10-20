@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Passingwind.UserDialogs;
@@ -10,7 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using PANOBOOKINGTAXI.Models;
 using Xamarin.Essentials;
-using System.Collections.ObjectModel;
 using PANOBOOKINGTAXI.DetailedViews;
 
 namespace PANOBOOKINGTAXI.Views
@@ -58,9 +55,20 @@ namespace PANOBOOKINGTAXI.Views
                     items = new List<BookingsListViewItem>();
                     foreach (var objs in obj.error)
                     {
-                        items.Add(new BookingsListViewItem { OrderCode = objs.OrderCode.Trim(), Cost = "$" + objs.Cost, Date = objs.Date, Facility = objs.Facility, Quantity = objs.Quantity, User = objs.User, DatesFrom = objs.DatesFrom, DatesTo = objs.DatesTo, Taken = objs.Taken });
+                        if (objs.OrderCode.Trim() == "No Schedule Found for this Vehicle so Far")
+                        {
+                            dialog.Hide();
+                            await DisplayAlert("Information", "No Schedule Found for this Vehicle so Far", "OK");
+                            await Navigation.PopModalAsync();
+                            return;
+                        }
+                        else
+                        {
+                            items.Add(new BookingsListViewItem { OrderCode = objs.OrderCode.Trim(), Cost = "$" + objs.Cost, Date = objs.Date, Facility = objs.Facility, Quantity = objs.Quantity, User = objs.User, DatesFrom = objs.DatesFrom, DatesTo = objs.DatesTo, Taken = objs.Taken });
+                        }
                     }
                     schedulelist.ItemsSource = items;
+                    //}
                 }
                 else
                 {
@@ -117,7 +125,7 @@ namespace PANOBOOKINGTAXI.Views
         {
             try
             {
-                
+
                 var realindex2 = e.ItemIndex.ToString();
                 var mydetails = e.Item as BookingsListViewItem;
                 var oder = mydetails.OrderCode;
