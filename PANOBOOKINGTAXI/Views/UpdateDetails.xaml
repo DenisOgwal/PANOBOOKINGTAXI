@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PANOBOOKINGTAXI.Views.UpdateDetails"
-              BackgroundImage="background.png">
+             x:Class="PANOBOOKINGTAXI.Views.UpdateDetails">
     <ContentPage.Content>
         <ScrollView>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="150"/>
                 </Grid.RowDefinitions>
+                <Grid>
+                    <Path Fill="#009fe1" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
+                    <Label Text="Update Details" FontSize="30" HorizontalTextAlignment="Center"  TextColor="White" FontAttributes="Bold" />
+                </Grid>
                 <Grid RowSpacing="20" Grid.Row="1" Margin="20,0,20,0">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="0"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
@@ -33,7 +36,7 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                     </Grid.RowDefinitions>
-                    <Label Text="Update Details" FontSize="30" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" TextColor="White" FontAttributes="Bold" />
+                   
                     <Entry Grid.Row="1" x:Name="fullnames" Placeholder="Full Names" PlaceholderColor="#bababa" FontSize="16"/>
                     <Entry Grid.Row="2" x:Name="email" Placeholder="Email" PlaceholderColor="#bababa" FontSize="16"></Entry>
                     <Entry Grid.Row="3" x:Name="phonenumber" Placeholder="Phone Number" PlaceholderColor="#bababa" FontSize="16"/>

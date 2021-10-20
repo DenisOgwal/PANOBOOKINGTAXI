@@ -11,12 +11,13 @@
         <ScrollView>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20"/>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Path Fill="#009fe1" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
-                <Grid RowSpacing="0" Grid.Row="1"  Margin="20,0,20,0">
+             
+                <Path Fill="#009fe1"  Grid.Row="1"  Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
+                <Grid RowSpacing="0" Grid.Row="1" Padding="0"  Margin="20,0,20,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="20"/>
@@ -34,7 +35,7 @@
                         <RowDefinition Height=".5*"/>
                         <RowDefinition Height=".5*"/>
                     </Grid.RowDefinitions>
-                <Grid   RowSpacing="0" Grid.Row="0" Margin="10,0,10,0">
+                <Grid RowSpacing="0" Grid.Row="0" Margin="10,0,10,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width=".5*"/>
                             <ColumnDefinition Width=".5*" />

@@ -15,7 +15,7 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="120"/>
                 </Grid.RowDefinitions>
-                <Path Fill="#009fe1" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
+                <Path Fill="#009fe1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Stroke="#009fe1" Aspect="Fill" Data="m157.21499,134.00999l551.99997,0l0,180.10576c-259.99998,-180.31756 -306.99998,199.52079 -551.99997,29.63292l0,-209.73868z"></Path>
                 <Grid RowSpacing="20" Grid.Row="1" Margin="20,0,20,0">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"/>
